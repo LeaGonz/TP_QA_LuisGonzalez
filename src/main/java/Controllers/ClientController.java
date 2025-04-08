@@ -33,6 +33,6 @@ public class ClientController {
         int min = seg / 60;
         int segrest = seg % 60;
 
-        return min + ":" + segrest;
+        return min + ":" + String.format("%02d", segrest);
     }
 }

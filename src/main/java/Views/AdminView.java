@@ -13,7 +13,7 @@ public class AdminView {
     AdminController adminController;
 
     public AdminView() throws FileNotFoundException {
-        this.adminController = new AdminController("src/java/resources/Cesaeland_vendas.csv","src/java/resources/Cesaeland_atracoes.csv","src/java/resources/Cesaeland_custos.csv");
+        this.adminController = new AdminController("src/main/resources/Cesaeland_vendas.csv","src/main/resources/Cesaeland_atracoes.csv","src/main/resources/Cesaeland_custos.csv");
     }
 
     public void adminMenu() throws InterruptedException {

@@ -12,7 +12,7 @@ public class EngView {
     EngController engController;
 
     public EngView() throws FileNotFoundException {
-        this.engController = new EngController("src/java/resources/Cesaeland_vendas.csv","src/java/resources/Cesaeland_atracoes.csv");
+        this.engController = new EngController("src/main/resources/Cesaeland_vendas.csv","src/main/resources/Cesaeland_atracoes.csv");
     }
 
     public void engMenu() throws InterruptedException {

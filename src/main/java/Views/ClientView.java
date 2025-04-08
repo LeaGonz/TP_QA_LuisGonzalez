@@ -13,7 +13,7 @@ public class ClientView {
     ClientController clientController;
 
     public ClientView() throws FileNotFoundException {
-        this.clientController = new ClientController("src/java/resources/Cesaeland_atracoes.csv");
+        this.clientController = new ClientController("src/main/resources/Cesaeland_atracoes.csv");
     }
 
     public void clientMenu() throws InterruptedException {
