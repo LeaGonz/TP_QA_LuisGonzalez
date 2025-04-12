@@ -18,6 +18,7 @@ public class ClientController {
 
     /**
      * Metodo para retornar a listagem das atrações
+     *
      * @return ArrayList<Atracoes>
      */
     public ArrayList<Atracoes> getAtracoes() {
@@ -26,10 +27,13 @@ public class ClientController {
 
     /**
      * Função para convertir segundos ao formato min:seg
+     *
      * @param seg int
      * @return String min:seg
      */
     public String segToMinSeg(int seg) {
+        if (seg < 0) return "0:00";
+
         int min = seg / 60;
         int segrest = seg % 60;
 

@@ -100,6 +100,8 @@ public class AdminController {
             }
         }
 
+        if (atracoes.isEmpty()) return new ArrayList<>();
+
         ArrayList<String> atracaoFinal = new ArrayList<>();
         for (Atracoes atracao : atracoesRepository.getAtracoes()) {
             if (atracao.getId() == atracoes.get(maior)) {
@@ -119,6 +121,7 @@ public class AdminController {
      * Função para calcular o total gastado.
      * Calculamos o total de bilhetes x o custo de manutenção por bilhete
      * E somamos com a quantidade de meses x os meses das vendas registradas
+     *
      * @return double Total gastos
      */
     public double totalGastos() {
@@ -156,7 +159,12 @@ public class AdminController {
         double totalGastos = 0;
         for (Custos custo : custosRepository.getCustos()) {
             int i = atracoes.indexOf(custo.getIdAtracao());
-            totalGastos += (custo.getManutencaoBilhete() * contador.get(i)) + (contadorMeses.get(i) * custo.getFixoMes());
+
+            if (i != -1) {
+                totalGastos += (custo.getManutencaoBilhete() * contador.get(i)) + (contadorMeses.get(i) * custo.getFixoMes());
+            } else {
+                totalGastos += custo.getFixoMes();
+            }
         }
 
         return totalGastos;
